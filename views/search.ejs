@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="VidCloudCms | <%=tli%>">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VidCloudCms | <%=tli%></title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3600/3600967.png" type="image/gif" sizes="16x16">
+    <meta property="og:image" content="https://cdn-icons-png.flaticon.com/128/3600/3600967.png">
+    <meta name="twitter:card" content="https://cdn-icons-png.flaticon.com/128/3600/3600967.png">
+    <meta name="description" content="Search Results for <%=tli%> Online For Free on VidCloudCms" />
+    <meta name="theme-color" content="#2482d9" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+    <body >
+
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="/">
+                            <img src="https://cdn-icons-png.flaticon.com/128/3600/3600967.png" width="30px" alt="vidcloudcmslogo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="/">Homepage</a></li>
+                                <li><a href="/#tv1">Tv Series</a></li>
+                                <li><a href="/#recent1">Recent</a></li>
+                                <li><a href="/#cinema1">Cinema</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="header__right">
+                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                        <a href="/"><span class="icon_profile"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="/"><i class="fa fa-home"></i> Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Product Section Begin -->
+    <section class="product-page spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="product__page__content">
+                        <div class="product__page__title">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-8 col-sm-6">
+                                    <div class="section-title">
+                                        <h4 id="aname">No Results Found</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="product__page__filter">
+                                        <p>Order by:</p>
+                                        <select>
+                                            <option value="">A-Z</option>
+                                            <option value="">1-10</option>
+                                            <option value="">10-50</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<!--RESULTS ///////////////////////////////////////////////////////////////////////////////////////////////////-->
+                        <div class="row" id="results">
+                            <% for(const d of datasr) {%>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="<%=d.img%>" style="background-image: url('<%=d.img%>');"">
+                                        <div class="ep"> <%=Math.floor((Math.random() * 4) + 3)%> / 5⭐</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> <%=Math.floor((Math.random() * 11) + 1)%>k</div>
+                                        <div class="view"><i class="fa fa-eye"></i><%=Math.floor((Math.random() * 99) + 10)%>,<%=Math.floor((Math.random() * 999) + 100)%> views</div>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <h5><a href="v/<%=d.link%>"><%=d.title%></a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                        </div>
+<!--RESULTS ///////////////////////////////////////////////////////////////////////////////////////////////////-->
+                    </div>
+                    <div class="product__pagination">
+                        <a href="#" class="current-page">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#"><i class="fa fa-angle-double-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="product__sidebar">
+                        <div class="product__sidebar__view">
+                            <div class="section-title">
+                                <h5>Top Views</h5>
+                            </div>
+                            <ul class="filter__controls">
+                                <li class="active" data-filter="*">Day</li>
+                                <li data-filter=".week">Week</li>
+                                <li data-filter=".month">Month</li>
+                                <li data-filter=".years">Years</li>
+                            </ul>
+                            <div class="filter__gallery">
+                                <div class="product__sidebar__view__item set-bg mix day years"
+                                data-setbg="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/zzXFM4FKDG7l1ufrAkwQYv2xvnh.jpg">
+                                <div class="ep">18 / ?</div>
+                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                <h5><a href="/v/the-ice-age-adventures-of-buck-wild">The Ice Age Adventures of Buck Wild</a></h5>
+                            </div>
+                            <div class="product__sidebar__view__item set-bg mix month week"
+                            data-setbg="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/wUcP57NxAi6GU3xn49f3Z6KnrkV.jpg">
+                            <div class="ep">18 / ?</div>
+                            <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                            <h5><a href="/v/shatner-in-space/">Shatner in Space</a></h5>
+                        </div>
+                        <div class="product__sidebar__view__item set-bg mix week years"
+                        data-setbg="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xRUTWExrqX40qUr5vZRR0MGAc7i.jpg">
+                        <div class="ep">18 / ?</div>
+                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                        <h5><a href="/v/blush">Blush</a></h5>
+                    </div>
+                    <div class="product__sidebar__view__item set-bg mix years month"
+                    data-setbg="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jrazfoWkigFEpXEwpAmaZFbBm.jpg">
+                    <div class="ep">18 / ?</div>
+                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                    <h5><a href="/v/the-real-charlie-chaplin/">The Real Charlie Chaplin</a></h5>
+                </div>
+                <div class="product__sidebar__view__item set-bg mix day"
+                data-setbg="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xIxSuBvx8tApounB5etdD5JGQvw.jpg">
+                <div class="ep">18 / ?</div>
+                <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                <h5><a href="/v/sister-swap-christmas-in-the-city/">Sister Swap: Christmas in the City</a></h5>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Section End -->
+
+<!-- Footer Section Begin -->
+<footer class="footer">
+    <div class="page-up">
+        <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="footer__logo">
+                    <a href="/"><img src="https://cdn-icons-png.flaticon.com/128/3600/3600967.png" width="50px" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="footer__nav">
+                    <ul>
+                        <li class="active"><a href="/">Homepage</a></li>
+                        <li><a href="/#tv1">Tv Series</a></li>
+                        <li><a href="/#recent1">Recent</a></li>
+                        <li><a href="/#cinema1">Cinema</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://github.com/healer-op" target="_blank">Healer♏</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+
+              </div>
+          </div>
+      </div>
+  </footer>
+  <!-- Footer Section End -->
+
+<!-- Search model Begin -->
+<div class="search-model">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch"><i class="icon_close"></i></div>
+        <form class="search-model-form" action="/search" method="get">
+            <input type="text" name="s" placeholder="Search here.....">
+            <button class="ti-search search-btn" type="submit"></button>
+        </form>
+    </div>
+</div>
+<!-- Search model end -->
+
+<!-- Js Plugins -->
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/player.js"></script>
+<script src="/js/jquery.nice-select.min.js"></script>
+<script src="/js/mixitup.min.js"></script>
+<script src="/js/jquery.slicknav.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+
+</html>
