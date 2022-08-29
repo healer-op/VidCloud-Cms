@@ -11,8 +11,10 @@ require('dotenv').config()
 const port = process.env.PORT || 3000;
 
 //Links
-let urdomain = `${process.env.YOUR_DOMAIN_WITH_HTTP}`;
-let urdomain1 = `${process.env.YOUR_DOMAIN_WITH_HTTPS}`;
+// let urdomain = `${process.env.YOUR_DOMAIN_WITH_HTTP}`;
+// let urdomain1 = `${process.env.YOUR_DOMAIN_WITH_HTTPS}`;
+let urdomain = `http://localhost:3000`;
+let urdomain1 = `https://localhost:3000`;
 let domain = `https://vidcloud.uno`;
 
 // 🛣️ Routes
@@ -24,11 +26,9 @@ app.use(express.static('public'))
 app.get("/", async function(req, res) {
     const res1 = await fetch(`${urdomain}/api/recent`);
     const datar = await res1.json();
-    const res2 = await fetch(`${urdomain}/api/series`);
+    const res2 = await fetch(`${urdomain}/api/movies`);
     const datas = await res2.json();
-    const res3 = await fetch(`${urdomain}/api/cinema`);
-    const datac = await res3.json();
-    res.render("home", {datar , datas , datac});
+    res.render("home", {datar , datas});
 });
 
 
@@ -79,8 +79,8 @@ app.get('/api',cors(corsOptionsDelegate), (req, res) => {
     <hr>
     🧯Recent : /v <br>
     >>>>>>>>>Example : <a href="/api/recent">Click Me</a> <br>
-    🧯TvSeries : /v/series <br>
-    >>>>>>>>>Example : <a href="/api/series">Click Me</a> <br>
+    🧯movies: /v/movies <br>
+    >>>>>>>>>Example : <a href="/api/movies">Click Me</a> <br>
     🧯Cinema : /v/cinema <br>
     >>>>>>>>>Example : <a href="/api/cinema">Click Me</a> <br>
     🧯Search : /v/search/:searchterm <br>
@@ -100,7 +100,7 @@ app.get('/api/recent',cors(corsOptionsDelegate), (req, res) => {
     
     axios.get(`${domain}`).then(urlResponse =>{
         const $ = cheerio.load(urlResponse.data);
-        $('div.col-md-2.col-sm-6.col-xs-6.item.responsive-height.post').each((i,element) =>{
+        $('#video-widget-8372 > div ').each((i,element) =>{
             data.push({
                 link: $(element).find('h3').find('a').attr('href').split(`${domain}/video/`)[1],
                 title: $(element).find('h3').text(),
@@ -116,12 +116,12 @@ app.get('/api/recent',cors(corsOptionsDelegate), (req, res) => {
 
 ////////////////////////////////////////////////////////////// VID CLOUD TV SERIES
 
-app.get('/api/series',cors(corsOptionsDelegate), (req, res) => {
+app.get('/api/movies',cors(corsOptionsDelegate), (req, res) => {
     var data=[];
     
-    axios.get(`${domain}/series`).then(urlResponse =>{
+    axios.get(`${domain}/movies`).then(urlResponse =>{
         const $ = cheerio.load(urlResponse.data);
-        $('div.col-md-2.col-sm-6.col-xs-6.item.responsive-height.post').each((i,element) =>{
+        $('#video-widget-8372 > div ').each((i,element) =>{
             data.push({
                 link: $(element).find('h3').find('a').attr('href').split(`${domain}/video/`)[1],
                 
@@ -138,26 +138,7 @@ app.get('/api/series',cors(corsOptionsDelegate), (req, res) => {
 
 })
 
-////////////////////////////////////////////////////////////// VID CLOUD CINEMA
 
-app.get('/api/cinema',cors(corsOptionsDelegate), (req, res) => {
-    var data=[];
-    
-    axios.get(`${domain}/cinema-movies`).then(urlResponse =>{
-        const $ = cheerio.load(urlResponse.data);
-        $('div.col-md-2.col-sm-6.col-xs-6.item.responsive-height.post').each((i,element) =>{
-            data.push({
-            link: $(element).find('h3').find('a').attr('href').split(`${domain}/video/`)[1],
-            title:  $(element).find('h3').text(),
-            img: $(element).find('img').attr('src')
-            });
-        });
-    })
-    .then(() => {
-        res.send(data);
-    })
-
-})
 
 ////////////////////////////////////////////////////////////// VID CLOUD SEARCH
 
@@ -167,7 +148,7 @@ app.get('/api/search/:searchterm',cors(corsOptionsDelegate), (req, res) => {
     
     axios.get(`${domain}/?s=${li}`).then(urlResponse =>{
         const $ = cheerio.load(urlResponse.data);
-        $('div.item.responsive-height.col-md-4.col-sm-6.col-xs-6').each((i,element) =>{
+        $('article').each((i,element) =>{
             data.push({
                 link: $(element).find('h3').find('a').attr('href').split(`${domain}/video/`)[1],
                 title: $(element).find('h3').text(),

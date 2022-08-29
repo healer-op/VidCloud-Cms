@@ -49,9 +49,9 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <li class="active"><a href="/">Homepage</a></li>
-                                <li><a href="/#tv1">Tv Series</a></li>
+                                <li><a href="/#tv1">Movies</a></li>
                                 <li><a href="/#recent1">Recent</a></li>
-                                <li><a href="/#cinema1">Cinema</a></li>
+                                <li><a href="/#tv1">Cinema</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -159,43 +159,9 @@
 
 <!-- Popular ////////////////////////////////////////////////////////////////////////////////////////  -->
 
-                    </div>
-                    <div class="trending__product">
-                        <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-8">
-                                <div class="section-title">
-                                    <h4>In Cinemas</h4>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="btn__all">
-                                    <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-
 <!-- RECENT ////////////////////////////////////////////////////////////////////////////////////////  -->
 
-                        <div class="row" id="cinema1">
-                            <% for(const d of datac) {%> 
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="product__item">
-                                        <div class="product__item__pic set-bg" data-setbg="<%=d.img%>"  style="background-image: url('<%=d.img%>');">
-                                            <div class="ep"> Cinema</div>
-                                            <div class="comment"><i class="fa fa-comments"></i> <%=Math.floor((Math.random() * 9) + 1)%>K</div>
-                                            <div class="view"><i class="fa fa-eye"></i> <%=Math.floor((Math.random() * 999) + 1)%>.<%=Math.floor((Math.random() * 9) + 1)%>k</div>
-                                        </div>
-                                        <div class="product__item__text">
-                                            <ul>
-                                                <li>In Cinema</li>
-                                                <li>2022</li>
-                                            </ul>
-                                            <h5><a href='v/<%=d.link%>'><%=d.title%></a></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            <% } %>
-                        </div>
+
 
 <!-- RECENT ////////////////////////////////////////////////////////////////////////////////////////  -->
 
@@ -204,7 +170,7 @@
                         <div class="row">
                             <div class="col-lg-8 col-md-8 col-sm-8">
                                 <div class="section-title">
-                                    <h4>TV SERIES</h4>
+                                    <h4>Movies</h4>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
